@@ -1,0 +1,6 @@
+package MailService_Mocki;
+
+public interface EmailService {
+    public boolean isAvailable();
+    public void sendEmail(String message);
+}
