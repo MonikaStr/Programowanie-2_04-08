@@ -13,11 +13,13 @@ public class Immutability {
         for (int i = 0; i < intLIst.size(); i++) {
             sum = sum + intLIst.get(i);
         }
+        //return intList.stream().mapToInt(x->x).sum();
         return sum;
     }
 
     public static void calculateAbsoluteValues(List<Integer> intList) {
         for (int i = 0; i < intList.size(); i++) {
+            //intList.set(i, Math.abs(intList.get(i)));
             if (intList.get(i) < 0) {
                 intList.set(i, -intList.get(i));
             }
@@ -31,9 +33,3 @@ public class Immutability {
 
 
 }
-/*
-3.	Napisz funkcję (wykorzystując powyższe), która sumuje wartości bezwzględne z listy integerów.
-4.	Stwórz listę z liczbami całkowitymi. Następnie wywołaj funkcję liczącą sumę wartości bezwzględnych, a potem funkcję liczącą sumę. Co się stało?
-5.	Podczas wywołania funkcji liczącej sumę wartości bezwzględnych podaj do niej swoją listę, ale zapakuj ją w metodę Collections.unmodifiableList . Czyli np. zamiast absoluteSum(list), będziemy mieli absoluteSum(Collections.unmodifiableList(list)) . Co się wtedy dzieje?
-
- */

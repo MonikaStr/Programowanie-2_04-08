@@ -1,7 +1,6 @@
 package Immutability;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Person {
     private String name;
@@ -11,17 +10,17 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
+ /*   public void setName(String name) {
         this.name = name;
     }
-
+*/
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+/*    public void setSurname(String surname) {
         this.surname = surname;
-    }
+    }*/
 
     public Person(String name, String surname) {
         this.name = name;
@@ -42,9 +41,23 @@ public class Person {
         return Objects.hash(name, surname);
     }
 
-    //Napisz funkcję, która przyjmuje listę obiektów typu Person z zadania 4 i zwróci listę osób bez duplikatów.
+    //Napisz funkcję, która przyjmuje listę obiektów typu Person i zwróci listę osób bez duplikatów.
 
-    public Person listWithoutDuplicates(List<Person> listOfPeople) {
-        return
+    public static List<Person> listWithoutDuplicates(List<Person> listOfPeople) {
+        List<Person> listOfPeople2 = new ArrayList<>();
+        for (int i = 0; i < listOfPeople.size(); i++) {
+            if (!listOfPeople2.contains(listOfPeople.get(i))) {
+                listOfPeople2.add(listOfPeople.get(i));
+            }
+        }
+        return listOfPeople2;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }
